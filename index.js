@@ -85,6 +85,7 @@ app.use("/api/auth", require("./routes/auth"));
 app.use("/api/pais", require("./routes/pais"));
 app.use("/api/region", require("./routes/region"));
 app.use("/api/comuna", require("./routes/comuna"));
+app.use("/api/sexoAnimal", require("./routes/sexoAnimal"));
 
 // Mostrar enlaces de la API en la consola
 const showApiLinks = (port) => {
@@ -98,6 +99,9 @@ const showApiLinks = (port) => {
   console.log(`🔹 Comunas:`);
   console.log(`   - GET  -> http://localhost:${port}/api/comuna`);
   console.log(`   - POST -> http://localhost:${port}/api/comuna`);
+  console.log(`🔹 Sexo del animal:`);
+  console.log(`   - GET  -> http://localhost:${port}/api/sexoAnimal`);
+  console.log(`   - POST -> http://localhost:${port}/api/sexoAnimal`);  
   console.log(`🔹 Documentación Swagger:`);
   console.log(`   - http://localhost:${port}/api-docs\n`);  
 };
