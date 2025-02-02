@@ -66,8 +66,19 @@ const createRegion = async (req, res) => {
   }
 };
 
+// Obtener todas las regiones con estado = 1
+const getActiveRegiones = async (req, res) => {
+  try {
+    const regiones = await Region.find({ estado: 1 }).select("nombre estado");
+    res.json(regiones);
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+};
+
 // Exportar las funciones correctamente
 module.exports = {
   getRegiones,
   createRegion,
+  getActiveRegiones
 };

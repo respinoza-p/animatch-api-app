@@ -10,5 +10,6 @@ if (!regionController || !regionController.getRegiones || !regionController.crea
 // Definir rutas
 router.get("/", regionController.getRegiones);
 router.post("/", regionController.createRegion);
+router.get("/activas", regionController.getActiveRegiones);
 
 module.exports = router;

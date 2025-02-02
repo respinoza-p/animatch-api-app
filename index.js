@@ -83,6 +83,7 @@ app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocs));
 // Rutas
 app.use("/api/pais", require("./routes/pais"));
 app.use("/api/region", require("./routes/region"));
+app.use("/api/comuna", require("./routes/comuna"));
 
 // Mostrar enlaces de la API en la consola
 const showApiLinks = (port) => {
@@ -93,8 +94,11 @@ const showApiLinks = (port) => {
   console.log(`🔹 Regiones:`);
   console.log(`   - GET  -> http://localhost:${port}/api/region`);
   console.log(`   - POST -> http://localhost:${port}/api/region`);
+  console.log(`🔹 Comunas:`);
+  console.log(`   - GET  -> http://localhost:${port}/api/comuna`);
+  console.log(`   - POST -> http://localhost:${port}/api/comuna`);
   console.log(`🔹 Documentación Swagger:`);
-  console.log(`   - http://localhost:${port}/api-docs\n`);
+  console.log(`   - http://localhost:${port}/api-docs\n`);  
 };
 
 // Iniciar el servidor
