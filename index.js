@@ -86,6 +86,9 @@ app.use("/api/pais", require("./routes/pais"));
 app.use("/api/region", require("./routes/region"));
 app.use("/api/comuna", require("./routes/comuna"));
 app.use("/api/sexoAnimal", require("./routes/sexoAnimal"));
+app.use("/api/estadoVacuna", require("./routes/estadoVacuna"));
+app.use("/api/tamanioAnimal", require("./routes/tamanioAnimal"));
+app.use("/api/usoChip", require("./routes/usoChip"));
 
 // Mostrar enlaces de la API en la consola
 const showApiLinks = (port) => {
@@ -101,7 +104,16 @@ const showApiLinks = (port) => {
   console.log(`   - POST -> http://localhost:${port}/api/comuna`);
   console.log(`🔹 Sexo del animal:`);
   console.log(`   - GET  -> http://localhost:${port}/api/sexoAnimal`);
-  console.log(`   - POST -> http://localhost:${port}/api/sexoAnimal`);  
+  console.log(`   - POST -> http://localhost:${port}/api/sexoAnimal`);
+  console.log(`🔹 Estado de vacunas del animal`);
+  console.log(`   - GET  -> http://localhost:${port}/api/estadoVacuna`);
+  console.log(`   - POST -> http://localhost:${port}/api/estadoVacuna`);
+  console.log(`🔹 Tamaños posibles del animal`);
+  console.log(`   - GET  -> http://localhost:${port}/api/tamanioAnimal`);
+  console.log(`   - POST -> http://localhost:${port}/api/tamanioAnimal`);
+  console.log(`🔹 Estado para el uso de chip del animal`);
+  console.log(`   - GET  -> http://localhost:${port}/api/usoChip`);
+  console.log(`   - POST -> http://localhost:${port}/api/usoChip`);  
   console.log(`🔹 Documentación Swagger:`);
   console.log(`   - http://localhost:${port}/api-docs\n`);  
 };
