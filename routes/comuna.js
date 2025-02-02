@@ -1,10 +1,11 @@
 const express = require("express");
 const router = express.Router();
 const comunaController = require("../controllers/comunaController");
+const authJWTMiddleware = require("../middlewares/authJWT");
 
 // Rutas para comunas
-router.get("/", comunaController.getComunas);
-router.post("/", comunaController.createComuna);
-router.get("/activas", comunaController.getActiveComunas);
+router.get("/", authJWTMiddleware, comunaController.getComunas);
+router.post("/", authJWTMiddleware, comunaController.createComuna);
+router.get("/activas", authJWTMiddleware, comunaController.getActiveComunas);
 
 module.exports = router;

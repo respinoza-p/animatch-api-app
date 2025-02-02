@@ -1,6 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const regionController = require("../controllers/regionController");
+const authJWTMiddleware = require("../middlewares/authJWT");
 
 // Verifica que el controlador esté correctamente importado
 if (!regionController || !regionController.getRegiones || !regionController.createRegion) {
@@ -8,8 +9,8 @@ if (!regionController || !regionController.getRegiones || !regionController.crea
 }
 
 // Definir rutas
-router.get("/", regionController.getRegiones);
-router.post("/", regionController.createRegion);
-router.get("/activas", regionController.getActiveRegiones);
+router.get("/", authJWTMiddleware, regionController.getRegiones);
+router.post("/", authJWTMiddleware, regionController.createRegion);
+router.get("/activas", authJWTMiddleware, regionController.getActiveRegiones);
 
 module.exports = router;

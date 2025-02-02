@@ -81,6 +81,7 @@ const swaggerDocs = swaggerJsdoc(swaggerOptions);
 app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocs));
 
 // Rutas
+app.use("/api/auth", require("./routes/auth"));
 app.use("/api/pais", require("./routes/pais"));
 app.use("/api/region", require("./routes/region"));
 app.use("/api/comuna", require("./routes/comuna"));

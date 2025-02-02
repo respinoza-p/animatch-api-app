@@ -1,7 +1,7 @@
 const Pais = require("../models/Pais");
 
 // Obtener todos los países
-exports.getPaises = async (req, res) => {
+const getPaises = async (req, res) => {
     try {
         const paises = await Pais.find();
         res.json(paises);
@@ -11,7 +11,7 @@ exports.getPaises = async (req, res) => {
 };
 
 // Crear un nuevo país con validación de duplicados
-exports.createPais = async (req, res) => {
+const createPais = async (req, res) => {
     try {
         const { nombre } = req.body;
 
@@ -34,4 +34,10 @@ exports.createPais = async (req, res) => {
     } catch (error) {
         res.status(400).json({ message: error.message });
     }
+};
+
+// Exportar las funciones correctamente
+module.exports = {
+    getPaises,
+    createPais
 };
