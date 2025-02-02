@@ -91,6 +91,7 @@ app.use("/api/tamanioAnimal", require("./routes/tamanioAnimal"));
 app.use("/api/usoChip", require("./routes/usoChip"));
 app.use("/api/tipoAlimentacion", require("./routes/tipoAlimentacion"));
 app.use("/api/tipoActividad", require("./routes/tipoActividad"));
+app.use("/api/caracterAnimal", require("./routes/caracterAnimal"));
 
 // Mostrar enlaces de la API en la consola
 const showApiLinks = (port) => {
@@ -121,7 +122,10 @@ const showApiLinks = (port) => {
   console.log(`   - POST -> http://localhost:${port}/api/tipoAlimentacion`);
   console.log(`🔹 Tipos de actividad física del animal`);
   console.log(`   - GET  -> http://localhost:${port}/api/tipoActividad`);
-  console.log(`   - POST -> http://localhost:${port}/api/tipoActividad`);  
+  console.log(`   - POST -> http://localhost:${port}/api/tipoActividad`);
+  console.log(`🔹 Caracter del animal`);
+  console.log(`   - GET  -> http://localhost:${port}/api/caracterAnimal`);
+  console.log(`   - POST -> http://localhost:${port}/api/caracterAnimal`);  
   console.log(`🔹 Documentación Swagger:`);
   console.log(`   - http://localhost:${port}/api-docs\n`);  
 };
