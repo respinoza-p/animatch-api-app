@@ -5,7 +5,7 @@ const tipoAlimentacionSchema = new mongoose.Schema(
     valor: {
       type: String,
       required: [true, "El valor del tipo de alimentación es obligatorio"],
-      minlength: [3, "El valor debe tener al menos 3 caracteres"],
+      minlength: [2, "El valor debe tener al menos 3 caracteres"],
       maxlength: [90, "El valor no puede exceder los 50 caracteres"],
       unique: true
     },
