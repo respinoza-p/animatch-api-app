@@ -95,6 +95,9 @@ app.use("/api/caracterAnimal", require("./routes/caracterAnimal"));
 app.use("/api/tipoEntrenamiento", require("./routes/tipoEntrenamiento"));
 app.use("/api/tipoCuidados", require("./routes/tipoCuidados"));
 app.use("/api/estadoReproductivo", require("./routes/estadoReproductivo"));
+app.use("/api/raza", require("./routes/raza"));
+app.use("/api/ejercicioAnimal", require("./routes/ejercicioAnimal"));
+app.use("/api/problemaComportamiento", require("./routes/problemaComportamiento"));
 
 // Mostrar enlaces de la API en la consola
 const showApiLinks = (port) => {
@@ -137,7 +140,16 @@ const showApiLinks = (port) => {
   console.log(`   - POST -> http://localhost:${port}/api/tipoCuidados`); 
   console.log(`🔹 Estado reproductivo del animal`);
   console.log(`   - GET  -> http://localhost:${port}/api/estadoReproductivo`);
-  console.log(`   - POST -> http://localhost:${port}/api/estadoReproductivo`);   
+  console.log(`   - POST -> http://localhost:${port}/api/estadoReproductivo`);
+  console.log(`🔹 Raza del animal`);
+  console.log(`   - GET  -> http://localhost:${port}/api/raza`);
+  console.log(`   - POST -> http://localhost:${port}/api/raza`);
+  console.log(`🔹 Tipo de ejercicios que debe realizar el animal`);
+  console.log(`   - GET  -> http://localhost:${port}/api/ejercicioAnimal`);
+  console.log(`   - POST -> http://localhost:${port}/api/ejercicioAnimal`);
+  console.log(`🔹 Problemas de comportamiento posibles del animal`);
+  console.log(`   - GET  -> http://localhost:${port}/api/problemaComportamiento`);
+  console.log(`   - POST -> http://localhost:${port}/api/problemaComportamiento`);   
   console.log(`🔹 Documentación Swagger:`);
   console.log(`   - http://localhost:${port}/api-docs\n`);  
 };
