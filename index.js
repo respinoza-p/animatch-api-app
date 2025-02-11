@@ -94,6 +94,7 @@ app.use("/api/tipoActividad", require("./routes/tipoActividad"));
 app.use("/api/caracterAnimal", require("./routes/caracterAnimal"));
 app.use("/api/tipoEntrenamiento", require("./routes/tipoEntrenamiento"));
 app.use("/api/tipoCuidados", require("./routes/tipoCuidados"));
+app.use("/api/estadoReproductivo", require("./routes/estadoReproductivo"));
 
 // Mostrar enlaces de la API en la consola
 const showApiLinks = (port) => {
@@ -133,7 +134,10 @@ const showApiLinks = (port) => {
   console.log(`   - POST -> http://localhost:${port}/api/tipoEntrenamiento`);
   console.log(`🔹 Tipo de cuidados necesario para el animal`);
   console.log(`   - GET  -> http://localhost:${port}/api/tipoCuidados`);
-  console.log(`   - POST -> http://localhost:${port}/api/tipoCuidados`);  
+  console.log(`   - POST -> http://localhost:${port}/api/tipoCuidados`); 
+  console.log(`🔹 Estado reproductivo del animal`);
+  console.log(`   - GET  -> http://localhost:${port}/api/estadoReproductivo`);
+  console.log(`   - POST -> http://localhost:${port}/api/estadoReproductivo`);   
   console.log(`🔹 Documentación Swagger:`);
   console.log(`   - http://localhost:${port}/api-docs\n`);  
 };
