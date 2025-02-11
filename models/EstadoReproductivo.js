@@ -26,8 +26,5 @@ const estadoReproductivoSchema = new mongoose.Schema(
   }
 );
 
-// Asegurar índice único para "valor"
-estadoReproductivoSchema.index({ valor: 1 }, { unique: true });
-
 const EstadoReproductivo = mongoose.model("EstadoReproductivo", estadoReproductivoSchema);
 module.exports = EstadoReproductivo;

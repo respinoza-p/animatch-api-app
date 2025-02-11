@@ -26,8 +26,5 @@ const problemaComportamientoSchema = new mongoose.Schema(
   }
 );
 
-// Asegurar índice único para "valor"
-problemaComportamientoSchema.index({ valor: 1 }, { unique: true });
-
 const ProblemaComportamiento = mongoose.model("ProblemaComportamiento", problemaComportamientoSchema);
 module.exports = ProblemaComportamiento;

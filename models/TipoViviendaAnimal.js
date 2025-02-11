@@ -26,8 +26,5 @@ const tipoViviendaAnimalSchema = new mongoose.Schema(
   }
 );
 
-// Asegurar índice único para "valor"
-tipoViviendaAnimalSchema.index({ valor: 1 }, { unique: true });
-
 const TipoViviendaAnimal = mongoose.model("TipoViviendaAnimal", tipoViviendaAnimalSchema);
 module.exports = TipoViviendaAnimal;

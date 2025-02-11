@@ -26,8 +26,5 @@ const ejercicioAnimalSchema = new mongoose.Schema(
   }
 );
 
-// Asegurar índice único para "valor"
-ejercicioAnimalSchema.index({ valor: 1 }, { unique: true });
-
 const EjercicioAnimal = mongoose.model("EjercicioAnimal", ejercicioAnimalSchema);
 module.exports = EjercicioAnimal;

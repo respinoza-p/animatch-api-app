@@ -26,8 +26,5 @@ const razaSchema = new mongoose.Schema(
   }
 );
 
-// Asegurar índice único para "valor"
-razaSchema.index({ valor: 1 }, { unique: true });
-
 const Raza = mongoose.model("Raza", razaSchema);
 module.exports = Raza;

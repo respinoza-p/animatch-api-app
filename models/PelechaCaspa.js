@@ -26,8 +26,5 @@ const pelechaCaspaSchema = new mongoose.Schema(
   }
 );
 
-// Asegurar índice único para "valor"
-pelechaCaspaSchema.index({ valor: 1 }, { unique: true });
-
 const PelechaCaspa = mongoose.model("PelechaCaspa", pelechaCaspaSchema);
 module.exports = PelechaCaspa;
