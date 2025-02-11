@@ -5,7 +5,7 @@ const pelechaCaspaSchema = new mongoose.Schema(
     valor: {
       type: String,
       required: [true, "El valor de pelecha/caspa es obligatorio"],
-      minlength: [3, "El valor debe tener al menos 3 caracteres"],
+      minlength: [2, "El valor debe tener al menos 3 caracteres"],
       maxlength: [50, "El valor no puede exceder los 50 caracteres"],
       unique: true,
       trim: true,
