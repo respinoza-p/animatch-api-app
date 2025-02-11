@@ -99,6 +99,7 @@ app.use("/api/raza", require("./routes/raza"));
 app.use("/api/ejercicioAnimal", require("./routes/ejercicioAnimal"));
 app.use("/api/problemaComportamiento", require("./routes/problemaComportamiento"));
 app.use("/api/tipoViviendaAnimal", require("./routes/tipoViviendaAnimal"));
+app.use("/api/pelechaCaspa", require("./routes/pelechaCaspa"));
 
 // Mostrar enlaces de la API en la consola
 const showApiLinks = (port) => {
@@ -151,9 +152,12 @@ const showApiLinks = (port) => {
   console.log(`🔹 Problemas de comportamiento posibles del animal`);
   console.log(`   - GET  -> http://localhost:${port}/api/problemaComportamiento`);
   console.log(`   - POST -> http://localhost:${port}/api/problemaComportamiento`);
-  console.log(`🔹 TTipo de vivienda donde puede habitar el animal`);
+  console.log(`🔹 Tipo de vivienda donde puede habitar el animal`);
   console.log(`   - GET  -> http://localhost:${port}/api/tipoViviendaAnimal`);
-  console.log(`   - POST -> http://localhost:${port}/api/tipoViviendaAnimal`);      
+  console.log(`   - POST -> http://localhost:${port}/api/tipoViviendaAnimal`);
+  console.log(`🔹 Indica si el animal pelecha o tiene caspa`);
+  console.log(`   - GET  -> http://localhost:${port}/api/pelechaCaspa`);
+  console.log(`   - POST -> http://localhost:${port}/api/pelechaCaspa`);        
   console.log(`🔹 Documentación Swagger:`);
   console.log(`   - http://localhost:${port}/api-docs\n`);  
 };
