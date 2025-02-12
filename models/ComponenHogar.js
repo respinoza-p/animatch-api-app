@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const ComponenHogarSchema = new mongoose.Schema({
+const componenHogarSchema = new mongoose.Schema({
   valor: {
     type: String,
     required: [true, "La descripción es obligatoria"],
@@ -17,4 +17,5 @@ const ComponenHogarSchema = new mongoose.Schema({
   timestamps: true // Agrega createdAt y updatedAt automáticamente
 });
 
-module.exports = mongoose.model("ComponenHogar", ComponenHogarSchema);
+const ComponenHogar = mongoose.model("ComponenHogar", componenHogarSchema);
+module.exports = ComponenHogar;
