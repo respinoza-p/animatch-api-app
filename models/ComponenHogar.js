@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 
 const ComponenHogarSchema = new mongoose.Schema({
-  descripcion: {
+  valor: {
     type: String,
     required: [true, "La descripción es obligatoria"],
     minlength: [3, "La descripción debe tener al menos 3 caracteres"],
