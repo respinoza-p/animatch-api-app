@@ -1,21 +1,28 @@
 const mongoose = require("mongoose");
 
-const componenHogarSchema = new mongoose.Schema({
-  valor: {
-    type: String,
-    required: [true, "La descripción es obligatoria"],
-    minlength: [3, "La descripción debe tener al menos 3 caracteres"],
-    maxlength: [90, "La descripción no puede exceder los 90 caracteres"],
-    unique: true
+const componenHogarSchema = new mongoose.Schema(
+  {
+    valor: {
+      type: String,
+      required: [true, "El valor de pelecha/caspa es obligatorio"],
+      minlength: [2, "El valor debe tener al menos 3 caracteres"],
+      maxlength: [50, "El valor no puede exceder los 50 caracteres"],
+      unique: true
+    },
+    estado: {
+      type: Number,
+      enum: [0, 1],
+      default: 1
+    },
+    timestamp: {
+      type: Date,
+      default: Date.now
+    }
   },
-  estado: {
-    type: Number,
-    enum: [0, 1], // 1 = Activo, 0 = Inactivo
-    default: 1
+  {
+    timestamps: true // Agrega automáticamente createdAt y updatedAt
   }
-}, {
-  timestamps: true // Agrega createdAt y updatedAt automáticamente
-});
+);
 
 const ComponenHogar = mongoose.model("ComponenHogar", componenHogarSchema);
 module.exports = ComponenHogar;

@@ -3,23 +3,23 @@ const ComponenHogar = require("../models/ComponenHogar");
 // 🔹 Método para agregar un nuevo ComponenHogar
 const createComponenHogar = async (req, res) => {
   try {
-    let { descripcion } = req.body;
+    let { valor } = req.body;
 
     // Normalizar y validar entrada
-    descripcion = descripcion.trim();
+    valor = valor.trim();
 
-    if (!descripcion) {
-      return res.status(400).json({ message: "La descripción no puede estar vacía" });
+    if (!valor) {
+      return res.status(400).json({ message: "El valor no puede estar vacio" });
     }
 
     // Verificar si ya existe
-    const existeComponen = await ComponenHogar.findOne({ descripcion });
+    const existeComponen = await ComponenHogar.findOne({ valor });
     if (existeComponen) {
       return res.status(400).json({ message: "El componen ya existe" });
     }
 
     // Crear y guardar el componen
-    const nuevoComponen = await new ComponenHogar({ descripcion }).save();
+    const nuevoComponen = await new ComponenHogar({ valor }).save();
 
     res.status(201).json({
       message: "ComponenHogar agregado correctamente",
@@ -35,7 +35,7 @@ const createComponenHogar = async (req, res) => {
 const getEstadosReproductivosActivos = async (req, res) => {
   try {
     const componenes = await ComponenHogar.find({ estado: 1 })
-      .select("descripcion estado")
+      .select("valor estado")
       .lean(); // 🔹 `lean()` mejora el rendimiento
 
     res.json({
