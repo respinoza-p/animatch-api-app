@@ -6,7 +6,7 @@ const componenHogarSchema = new mongoose.Schema(
       type: String,
       required: [true, "El valor de pelecha/caspa es obligatorio"],
       minlength: [2, "El valor debe tener al menos 3 caracteres"],
-      maxlength: [50, "El valor no puede exceder los 50 caracteres"],
+      maxlength: [100, "El valor no puede exceder los 50 caracteres"],
       unique: true
     },
     estado: {
