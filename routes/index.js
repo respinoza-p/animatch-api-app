@@ -26,6 +26,7 @@ const pelechaCaspaRoutes = require("./pelechaCaspa");
 
 // Servicios para humanos
 const componenHogar = require("./componenHogar");
+const fraseIdentifica = require("./fraseIdentifica");
 
 // Rutas servicios comunes
 router.use("/auth", authRoutes);
@@ -52,5 +53,6 @@ router.use("/pelechaCaspa", pelechaCaspaRoutes);
 
 // Rutas servicios humano
 router.use("/humano/componenHogar", componenHogar);
+router.use("/humano/fraseIdentifica", fraseIdentifica);
 
 module.exports = router;
