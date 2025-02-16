@@ -37,6 +37,7 @@ const dispuestoAdoptar = require("./dispuestoAdoptar");
 const vivoEn = require("./vivoEn");
 const presupuestoMensual = require("./presupuestoMensual");
 const paseosAnimal = require("./paseosAnimal");
+const tiempoSoledadAnimal = require("./tiempoSoledadAnimal");
 
 // Rutas servicios comunes
 router.use("/auth", authRoutes);
@@ -74,5 +75,6 @@ router.use("/humano/dispuestoAdoptar", dispuestoAdoptar);
 router.use("/humano/vivoEn", vivoEn);
 router.use("/humano/presupuestoMensual", presupuestoMensual);
 router.use("/humano/paseosAnimal", paseosAnimal);
+router.use("/humano/tiempoSoledadAnimal", tiempoSoledadAnimal);
 
 module.exports = router;
