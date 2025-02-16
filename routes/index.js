@@ -32,7 +32,7 @@ const porqueDeseaAdoptar = require("./porqueDeseaAdoptar");
 const alergiaEnfermedad = require("./alergiaEnfermedad");
 const haTenidoAnimales = require("./haTenidoAnimales");
 const actualmenteTengo = require("./actualmenteTengo");
-const opinionEsterilizaRoutes = require("./opinionEsteriliza");
+const opinionEsteriliza = require("./opinionEsteriliza");
 
 // Rutas servicios comunes
 router.use("/auth", authRoutes);
@@ -65,6 +65,6 @@ router.use("/humano/porqueDeseaAdoptar", porqueDeseaAdoptar);
 router.use("/humano/alergiaEnfermedad", alergiaEnfermedad);
 router.use("/humano/haTenidoAnimales", haTenidoAnimales);
 router.use("/humano/actualmenteTengo", actualmenteTengo);
-router.use("/humano/opinionEsteriliza", opinionEsterilizaRoutes);
+router.use("/humano/opinionEsteriliza", opinionEsteriliza);
 
 module.exports = router;
