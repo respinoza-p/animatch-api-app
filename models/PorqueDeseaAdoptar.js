@@ -21,4 +21,4 @@ const porqueDeseaAdoptarSchema = new mongoose.Schema(
 );
 
 const PorqueDeseaAdoptar = mongoose.model("PorqueDeseaAdoptar", porqueDeseaAdoptarSchema);
-module.exports = FraseIdentifica;
+module.exports = PorqueDeseaAdoptar;
