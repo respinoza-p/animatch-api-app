@@ -35,6 +35,7 @@ const actualmenteTengo = require("./actualmenteTengo");
 const opinionEsteriliza = require("./opinionEsteriliza");
 const dispuestoAdoptar = require("./dispuestoAdoptar");
 const vivoEn = require("./vivoEn");
+const presupuestoMensual = require("./presupuestoMensual");
 
 // Rutas servicios comunes
 router.use("/auth", authRoutes);
@@ -70,5 +71,6 @@ router.use("/humano/actualmenteTengo", actualmenteTengo);
 router.use("/humano/opinionEsteriliza", opinionEsteriliza);
 router.use("/humano/dispuestoAdoptar", dispuestoAdoptar);
 router.use("/humano/vivoEn", vivoEn);
+router.use("/humano/presupuestoMensual", presupuestoMensual);
 
 module.exports = router;
