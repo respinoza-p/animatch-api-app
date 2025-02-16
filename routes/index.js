@@ -29,6 +29,7 @@ const componenHogar = require("./componenHogar");
 const fraseIdentifica = require("./fraseIdentifica");
 const porqueDeseaAdoptar = require("./porqueDeseaAdoptar");
 const alergiaEnfermedad = require("./alergiaEnfermedad");
+const haTenidoAnimalesRoutes = require("./haTenidoAnimales");
 
 // Rutas servicios comunes
 router.use("/auth", authRoutes);
@@ -58,5 +59,6 @@ router.use("/humano/componenHogar", componenHogar);
 router.use("/humano/fraseIdentifica", fraseIdentifica);
 router.use("/humano/porqueDeseaAdoptar", porqueDeseaAdoptar);
 router.use("/humano/alergiaEnfermedad", alergiaEnfermedad);
+router.use("/humano/haTenidoAnimales", haTenidoAnimalesRoutes);
 
 module.exports = router;
