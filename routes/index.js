@@ -28,6 +28,7 @@ const pelechaCaspaRoutes = require("./pelechaCaspa");
 const componenHogar = require("./componenHogar");
 const fraseIdentifica = require("./fraseIdentifica");
 const porqueDeseaAdoptar = require("./porqueDeseaAdoptar");
+const alergiaEnfermedad = require("./alergiaEnfermedad");
 
 // Rutas servicios comunes
 router.use("/auth", authRoutes);
@@ -56,5 +57,6 @@ router.use("/pelechaCaspa", pelechaCaspaRoutes);
 router.use("/humano/componenHogar", componenHogar);
 router.use("/humano/fraseIdentifica", fraseIdentifica);
 router.use("/humano/porqueDeseaAdoptar", porqueDeseaAdoptar);
+router.use("/humano/alergiaEnfermedad", alergiaEnfermedad);
 
 module.exports = router;
