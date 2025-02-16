@@ -23,6 +23,7 @@ const ejercicioAnimalRoutes = require("./ejercicioAnimal");
 const problemaComportamientoRoutes = require("./problemaComportamiento");
 const tipoViviendaAnimalRoutes = require("./tipoViviendaAnimal");
 const pelechaCaspaRoutes = require("./pelechaCaspa");
+const edadAnimal = require("./edadAnimal");
 
 // Servicios para humanos
 const componenHogar = require("./componenHogar");
@@ -54,6 +55,7 @@ router.use("/ejercicioAnimal", ejercicioAnimalRoutes);
 router.use("/problemaComportamiento", problemaComportamientoRoutes);
 router.use("/tipoViviendaAnimal", tipoViviendaAnimalRoutes);
 router.use("/pelechaCaspa", pelechaCaspaRoutes);
+router.use("/edadAnimal", edadAnimal);
 
 // Rutas servicios humano
 router.use("/humano/componenHogar", componenHogar);
