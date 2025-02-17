@@ -51,6 +51,7 @@ const recursosUrgencia = require("./recursosUrgencia");
 const medidasComportamiento = require("./medidasComportamiento");
 const nuevoIntegranteFamiliar = require("./nuevoIntegranteFamiliar");
 const compromisosAdoptante = require("./compromisosAdoptante");
+const contactoConRescatistas = require("./contactoConRescatistas");
 
 // Rutas servicios comunes
 router.use("/auth", authRoutes);
@@ -102,5 +103,6 @@ router.use("/adopcion/recursosUrgencia", recursosUrgencia);
 router.use("/adopcion/medidasComportamiento", medidasComportamiento);
 router.use("/adopcion/nuevoIntegranteFamiliar", nuevoIntegranteFamiliar);
 router.use("/adopcion/compromisosAdoptante", compromisosAdoptante);
+router.use("/adopcion/contactoConRescatistas", contactoConRescatistas);
 
 module.exports = router;
