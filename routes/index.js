@@ -44,6 +44,7 @@ const estanDeAcuerdoAdopcion = require("./estanDeAcuerdoAdopcion");
 const comoPaseaAnimal = require("./comoPaseaAnimal");
 const periodoVacaciones = require("./periodoVacaciones");
 const cambioDomicilio = require("./cambioDomicilio");
+const herenciaAnimal = require("./herenciaAnimal");
 
 // Rutas servicios comunes
 router.use("/auth", authRoutes);
@@ -88,5 +89,6 @@ router.use("/adopcion/estanDeAcuerdoAdopcion", estanDeAcuerdoAdopcion);
 router.use("/adopcion/comoPaseaAnimal", comoPaseaAnimal);
 router.use("/adopcion/periodoVacaciones", periodoVacaciones);
 router.use("/adopcion/cambioDomicilio", cambioDomicilio);
+router.use("/adopcion/herenciaAnimal", herenciaAnimal);
 
 module.exports = router;
