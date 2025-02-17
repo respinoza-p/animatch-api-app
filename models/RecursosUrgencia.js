@@ -6,7 +6,7 @@ const recursosUrgenciaSchema = new mongoose.Schema(
       type: String,
       required: [true, "El valor es obligatorio"],
       minlength: [2, "El valor debe tener al menos 2 caracteres"],
-      maxlength: [90, "El valor no puede exceder los 90 caracteres"],
+      maxlength: [120, "El valor no puede exceder los 120 caracteres"],
       unique: true
     },
     estado: {
