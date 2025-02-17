@@ -50,6 +50,7 @@ const propiedadVivienda = require("./propiedadVivienda");
 const recursosUrgencia = require("./recursosUrgencia");
 const medidasComportamiento = require("./medidasComportamiento");
 const nuevoIntegranteFamiliar = require("./nuevoIntegranteFamiliar");
+const compromisosAdoptante = require("./compromisosAdoptante");
 
 // Rutas servicios comunes
 router.use("/auth", authRoutes);
@@ -100,5 +101,6 @@ router.use("/adopcion/propiedadVivienda", propiedadVivienda);
 router.use("/adopcion/recursosUrgencia", recursosUrgencia);
 router.use("/adopcion/medidasComportamiento", medidasComportamiento);
 router.use("/adopcion/nuevoIntegranteFamiliar", nuevoIntegranteFamiliar);
+router.use("/adopcion/compromisosAdoptante", compromisosAdoptante);
 
 module.exports = router;
