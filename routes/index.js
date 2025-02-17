@@ -42,6 +42,7 @@ const tiempoSoledadAnimal = require("./tiempoSoledadAnimal");
 // Servicios para el formulario de adopcion
 const estanDeAcuerdoAdopcion = require("./estanDeAcuerdoAdopcion");
 const comoPaseaAnimal = require("./comoPaseaAnimal");
+const periodoVacaciones = require("./periodoVacaciones");
 
 // Rutas servicios comunes
 router.use("/auth", authRoutes);
@@ -84,5 +85,6 @@ router.use("/humano/tiempoSoledadAnimal", tiempoSoledadAnimal);
 // Rutas servicios para formulario de adopcion
 router.use("/adopcion/estanDeAcuerdoAdopcion", estanDeAcuerdoAdopcion);
 router.use("/adopcion/comoPaseaAnimal", comoPaseaAnimal);
+router.use("/adopcion/periodoVacaciones", periodoVacaciones);
 
 module.exports = router;
