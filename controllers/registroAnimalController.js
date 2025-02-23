@@ -1,4 +1,4 @@
-const RegistroAnimal = require("../models/registroAnimal");
+const RegistroAnimal = require("../models/RegistroAnimal");
 
 const createRegistroAnimal = async (req, res) => {
   try {
