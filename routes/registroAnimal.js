@@ -16,6 +16,6 @@ const upload = multer({
 });
 
 // Ruta para crear un registro con hasta 3 fotos
-router.post("/registroAnimal",upload.array("fotos", 3),createRegistroAnimal);
+router.post("/",upload.array("fotos", 3),createRegistroAnimal);
 
 module.exports = router;

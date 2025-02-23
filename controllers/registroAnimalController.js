@@ -2,6 +2,14 @@ const RegistroAnimal = require("../models/RegistroAnimal");
 
 const createRegistroAnimal = async (req, res) => {
   try {
+    // Imprimir por consola el JSON entrante (req.body)
+    console.log("Datos del formulario:", req.body);
+
+    // Si se han subido archivos, también se pueden imprimir
+    if (req.files) {
+      console.log("Archivos recibidos:", req.files);
+    }
+
     // Los campos del formulario vienen en req.body
     // y los archivos (fotos) en req.files
     const {
@@ -37,7 +45,9 @@ const createRegistroAnimal = async (req, res) => {
         contentType: file.mimetype
       }));
     } else {
-      return res.status(400).json({ error: "Debe cargar al menos una fotografía." });
+      return res
+        .status(400)
+        .json({ error: "Debe cargar al menos una fotografía." });
     }
 
     const registroData = {
