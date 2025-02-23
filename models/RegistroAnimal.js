@@ -33,5 +33,6 @@ const registroAnimalSchema = new mongoose.Schema(
   { timestamps: true }
 );
 
+const RegistroAnimal = mongoose.model("RegistroAnimal", registroAnimalSchema)
 
-module.exports = mongoose.model("RegistroAnimal", registroAnimalSchema);
+module.exports = RegistroAnimal;
