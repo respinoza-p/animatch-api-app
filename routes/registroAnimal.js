@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const multer = require("multer");
-const { createRegistroAnimal } = require("./registroAnimalController");
+const { createRegistroAnimal } = require("../controllers/registroAnimalController");
 
 const authJWTMiddleware = require("../middlewares/authJWT"); // Protección con JWT
 

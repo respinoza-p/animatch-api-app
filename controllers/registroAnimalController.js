@@ -1,6 +1,6 @@
-const RegistroAnimal = require("./registroAnimalModel");
+const RegistroAnimal = require("../models/registroAnimal");
 
-exports.createRegistroAnimal = async (req, res) => {
+const createRegistroAnimal = async (req, res) => {
   try {
     // Los campos del formulario vienen en req.body
     // y los archivos (fotos) en req.files
@@ -72,4 +72,8 @@ exports.createRegistroAnimal = async (req, res) => {
     console.error("Error al crear RegistroAnimal:", error);
     res.status(500).json({ error: "Error al guardar el registro" });
   }
+};
+
+module.exports = {
+  createRegistroAnimal
 };
