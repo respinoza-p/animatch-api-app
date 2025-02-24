@@ -10,8 +10,7 @@ const createRegistroAnimal = async (req, res) => {
       console.log("Archivos recibidos:", req.files);
     }
 
-    // Los campos del formulario vienen en req.body
-    // y los archivos (fotos) en req.files
+    // Extraer los campos del formulario, incluyendo el correo electrónico
     const {
       nombre,
       edad,
@@ -33,10 +32,11 @@ const createRegistroAnimal = async (req, res) => {
       problemaComportamiento,
       relacionOtrosAnimales,
       perroAptoPara,
-      pelechaCaspa
+      pelechaCaspa,
+      correo
     } = req.body;
 
-    // Se procesan los archivos subidos y se asignan al campo fotos
+    // Procesar los archivos subidos y asignarlos al campo fotos
     // Se espera recibir un máximo de 3 fotos
     let fotos = [];
     if (req.files && req.files.length > 0) {
@@ -72,6 +72,7 @@ const createRegistroAnimal = async (req, res) => {
       relacionOtrosAnimales,
       perroAptoPara,
       pelechaCaspa,
+      correo, // Agregamos el correo al objeto de registro
       fotos
     };
 

@@ -28,11 +28,19 @@ const registroAnimalSchema = new mongoose.Schema(
     relacionOtrosAnimales: { type: String, required: true },
     perroAptoPara: { type: String, required: true },
     pelechaCaspa: { type: String, required: true },
-    fotos: { type: [fotoSchema], required: true }
+    correo: {
+      type: String,
+      required: true,
+      match: [/.+\@.+\..+/, "Por favor ingrese un correo electrónico válido."]
+    },
+    fotos: { type: [fotoSchema], required: true },
+
+    // Nuevo campo estadoRegistro (opcional, valor por defecto 0)
+    estadoRegistro: { type: Number, default: 0 }
   },
   { timestamps: true }
 );
 
-const RegistroAnimal = mongoose.model("RegistroAnimal", registroAnimalSchema)
+const RegistroAnimal = mongoose.model("RegistroAnimal", registroAnimalSchema);
 
 module.exports = RegistroAnimal;
