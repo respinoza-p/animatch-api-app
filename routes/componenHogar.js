@@ -1,12 +1,16 @@
 const express = require("express");
 const router = express.Router();
-const { createComponenHogar, getEstadosReproductivosActivos } = require("../controllers/componenHogarController");
+const {
+    createComponenHogar,
+    getComponenHogarActivos
+} = require("../controllers/componenHogarController");
 const authJWTMiddleware = require("../middlewares/authJWT"); // Protección con JWT
 
-// 🔹 Ruta para agregar un nuevo ComponenHogar (Protegida con JWT)
-router.post("/", authJWTMiddleware, createComponenHogar);
+// Middleware de autenticación para todas las rutas
+router.use(authJWTMiddleware);
 
-// 🔹 Ruta para obtener los datos de componen hogar activos (Protegida con JWT)
-router.get("/activos", authJWTMiddleware, getComponenHogarActivos);
+// Rutas protegidas
+router.post("/", createComponenHogar);
+router.get("/activos", getComponenHogarActivos);
 
 module.exports = router;
