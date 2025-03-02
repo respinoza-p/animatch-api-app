@@ -6,7 +6,7 @@ const authJWTMiddleware = require("../middlewares/authJWT"); // Protección con 
 // 🔹 Ruta para agregar un nuevo ComponenHogar (Protegida con JWT)
 router.post("/", authJWTMiddleware, createComponenHogar);
 
-// 🔹 Ruta para obtener todos los estados reproductivos activos (Protegida con JWT)
-router.get("/activos", authJWTMiddleware, getEstadosReproductivosActivos);
+// 🔹 Ruta para obtener los datos de componen hogar activos (Protegida con JWT)
+router.get("/activos", authJWTMiddleware, getComponenHogarActivos);
 
 module.exports = router;

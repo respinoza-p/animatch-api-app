@@ -31,24 +31,23 @@ const createComponenHogar = async (req, res) => {
   }
 };
 
-// 🔹 Método para obtener todos los estados reproductivos activos
-const getEstadosReproductivosActivos = async (req, res) => {
+const getComponenHogarActivos = async (req, res) => {
   try {
-    const componenes = await ComponenHogar.find({ estado: 1 })
-      .select("valor estado")
-      .lean(); // 🔹 `lean()` mejora el rendimiento
-
-    res.json({
-      total: componenes.length,
-      data: componenes
-    });
+    const activos = await ComponenHogar.find({ estado: 1 }).select("valor estado");
+    res.json(activos);
   } catch (error) {
-    console.error("Error en getEstadosReproductivosActivos:", error);
-    res.status(500).json({ message: "Error interno del servidor" });
+    res.status(500).json({ message: error.message });
   }
 };
 
+try {
+  const activos = await ComoPaseaAnimal.find({ estado: 1 }).select("valor estado");
+  res.json(activos);
+} catch (error) {
+  res.status(500).json({ message: error.message });
+}
+
 module.exports = {
   createComponenHogar,
-  getEstadosReproductivosActivos
+  getComponenHogarActivos
 };
