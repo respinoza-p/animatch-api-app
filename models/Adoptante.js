@@ -8,7 +8,7 @@ const adoptanteSchema = new mongoose.Schema({
   alergiaEnfermedad: { type: mongoose.Schema.Types.ObjectId, ref: "AlergiaEnfermedad", required: true },
   haTenidoAnimales: { type: mongoose.Schema.Types.ObjectId, ref: "HaTenidoAnimales", required: true },
   actualmenteTengo: { type: mongoose.Schema.Types.ObjectId, ref: "ActualmenteTengo", required: true },
-  tamAnimal: { type: mongoose.Schema.Types.ObjectId, ref: "TamanioAnimal", required: true },
+  tamanioAnimal: { type: mongoose.Schema.Types.ObjectId, ref: "TamanioAnimal", required: true },
   edadAnimal: { type: mongoose.Schema.Types.ObjectId, ref: "EdadAnimal", required: true },
   opinionEsteriliza: { type: mongoose.Schema.Types.ObjectId, ref: "OpinionEsteriliza", required: true },
   dispuestoAdoptar: { type: mongoose.Schema.Types.ObjectId, ref: "DispuestoAdoptar", required: true },

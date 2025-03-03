@@ -13,7 +13,7 @@ const createRegistroAdoptante = async (req, res) => {
         alergiaEnfermedad,
         haTenidoAnimales,
         actualmenteTengo,
-        tamAnimal,
+        tamanioAnimal,
         edadAnimal,
         opinionEsteriliza,
         dispuestoAdoptar,
@@ -44,7 +44,7 @@ const createRegistroAdoptante = async (req, res) => {
             alergiaEnfermedad,
             haTenidoAnimales,
             actualmenteTengo,
-            tamAnimal,
+            tamanioAnimal,
             edadAnimal,
             opinionEsteriliza,
             dispuestoAdoptar,
@@ -70,7 +70,7 @@ const createRegistroAdoptante = async (req, res) => {
         alergiaEnfermedad,
         haTenidoAnimales,
         actualmenteTengo,
-        tamAnimal,
+        tamanioAnimal,
         edadAnimal,
         opinionEsteriliza,
         dispuestoAdoptar,
@@ -102,7 +102,7 @@ const getRegistroAdoptante = async (req, res) => {
       .populate('alergiaEnfermedad')
       .populate('haTenidoAnimales')
       .populate('actualmenteTengo')
-      .populate('tamAnimal')
+      .populate('tamanioAnimal')
       .populate('edadAnimal')
       .populate('opinionEsteriliza')
       .populate('dispuestoAdoptar')
