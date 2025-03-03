@@ -40,6 +40,7 @@ const vivoEn = require("./vivoEn");
 const presupuestoMensual = require("./presupuestoMensual");
 const paseosAnimal = require("./paseosAnimal");
 const tiempoSoledadAnimal = require("./tiempoSoledadAnimal");
+const registroAdoptante = require("./registroAdoptante");
 
 // Servicios para el formulario de adopcion
 const estanDeAcuerdoAdopcion = require("./estanDeAcuerdoAdopcion");
@@ -94,6 +95,7 @@ router.use("/humano/vivoEn", vivoEn);
 router.use("/humano/presupuestoMensual", presupuestoMensual);
 router.use("/humano/paseosAnimal", paseosAnimal);
 router.use("/humano/tiempoSoledadAnimal", tiempoSoledadAnimal);
+router.use("/humano/registroAdoptante",registroAdoptante);
 
 // Rutas servicios para formulario de adopcion
 router.use("/adopcion/estanDeAcuerdoAdopcion", estanDeAcuerdoAdopcion);
