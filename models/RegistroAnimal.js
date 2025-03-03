@@ -7,36 +7,48 @@ const fotoSchema = new mongoose.Schema({
 
 const registroAnimalSchema = new mongoose.Schema(
   {
-    nombre: { type: String, required: true },
-    edad: { type: Number, required: true },
-    peso: { type: Number, required: true },
-    sexo: { type: String, required: true },
-    chip: { type: String, required: true },
-    alimentacion: { type: String, required: true },
-    vacuna: { type: String, required: true },
-    esterilizado: { type: String, required: true },
-    raza: { type: String, required: true },
-    tamAnimal: { type: String, required: true },
+    nombre: { type: String, required: true, trim: true },
+    edad: { type: Number, required: true, min: 0 },
+    peso: { type: Number, required: true, min: 0 },
+    
+    // Relaciones con otros modelos
+    sexo: { type: mongoose.Schema.Types.ObjectId, ref: "SexoAnimal", required: true },
+    chip: { type: mongoose.Schema.Types.ObjectId, ref: "UsoChip", required: true },
+    alimentacion: { type: mongoose.Schema.Types.ObjectId, ref: "TipoAlimentacion", required: true },
+    vacuna: { type: mongoose.Schema.Types.ObjectId, ref: "EstadoVacuna", required: true },
+    esterilizado: { type: mongoose.Schema.Types.ObjectId, ref: "EstadoReproductivo", required: true },
+    raza: { type: mongoose.Schema.Types.ObjectId, ref: "Raza", required: true },
+    tamanioAnimal: { type: mongoose.Schema.Types.ObjectId, ref: "TamanioAnimal", required: true },
+    tipoActividad: { type: mongoose.Schema.Types.ObjectId, ref: "TipoActividad", required: true },
+    caracter: { type: mongoose.Schema.Types.ObjectId, ref: "CaracterAnimal", required: true },
+    tipoEntrenamiento: { type: mongoose.Schema.Types.ObjectId, ref: "TipoEntrenamiento", required: true },
+    cuidados: { type: mongoose.Schema.Types.ObjectId, ref: "TipoCuidados", required: true },
+    problemaComportamiento: { type: mongoose.Schema.Types.ObjectId, ref: "ProblemaComportamiento", required: true },
+    relacionOtrosAnimales: { type: mongoose.Schema.Types.ObjectId, ref: "RelacionOtrosAnimales", required: true },
+    perroAptoPara: { type: mongoose.Schema.Types.ObjectId, ref: "TipoViviendaAnimal", required: true },
+    pelechaCaspa: { type: mongoose.Schema.Types.ObjectId, ref: "PelechaCaspa", required: true },
+
+    // Fechas
     fechaNacimiento: { type: Date, required: true },
     fechaRescate: { type: Date, required: true },
-    cantAdopciones: { type: Number, required: true },
-    tipoActividad: { type: String, required: true },
-    caracter: { type: String, required: true },
-    tipoEntrenamiento: { type: String, required: true },
-    cuidados: { type: String, required: true },
-    problemaComportamiento: { type: String, required: true },
-    relacionOtrosAnimales: { type: String, required: true },
-    perroAptoPara: { type: String, required: true },
-    pelechaCaspa: { type: String, required: true },
+
+    // Cantidad de adopciones previas
+    cantAdopciones: { type: Number, required: true, min: 0 },
+
+    // Información del adoptante
     correo: {
       type: String,
       required: true,
-      match: [/.+\@.+\..+/, "Por favor ingrese un correo electrónico válido."]
+      match: [/.+\@.+\..+/, "Por favor ingrese un correo electrónico válido."],
+      lowercase: true,
+      trim: true
     },
+
+    // Fotos del animal
     fotos: { type: [fotoSchema], required: true },
 
-    // Nuevo campo estadoRegistro (opcional, valor por defecto 0)
-    estadoRegistro: { type: Number, default: 0 }
+    // Estado del registro (activo/inactivo)
+    estadoRegistro: { type: Number, default: 0, enum: [0, 1] } // 0 = Inactivo, 1 = Activo
   },
   { timestamps: true }
 );
