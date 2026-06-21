@@ -5,6 +5,9 @@ require("dotenv").config();
 const swaggerJsdoc = require("swagger-jsdoc");
 const swaggerUi = require("swagger-ui-express");
 const morgan = require("morgan");
+const helmet = require("helmet");
+const mongoSanitize = require("express-mongo-sanitize");
+const rateLimit = require("express-rate-limit");
 
 // Inicialización de Express
 const app = express();
@@ -35,6 +38,21 @@ app.options("*", cors());
 // Middleware JSON y logs
 app.use(express.json());
 app.use(morgan("dev"));
+
+// 🔹 Medidas de Seguridad
+// 1. Helmet para cabeceras HTTP seguras (desactivamos CSP para mantener compatibilidad con Swagger UI)
+app.use(helmet({ contentSecurityPolicy: false }));
+
+// 2. Sanitizar req.body, req.query y req.params para prevenir NoSQL Injection
+app.use(mongoSanitize());
+
+// 3. Limitador de peticiones (Rate Limiter) contra ataques de fuerza bruta / DoS
+const limiter = rateLimit({
+  windowMs: 15 * 60 * 1000, // 15 minutos
+  max: 100, // Máximo 100 solicitudes por IP
+  message: { message: "Demasiadas peticiones desde esta IP, por favor intente de nuevo más tarde." }
+});
+app.use("/api", limiter);
 
 // 🔹 Middleware Global para CORS en las respuestas
 app.use((req, res, next) => {

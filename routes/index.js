@@ -102,7 +102,7 @@ router.use("/adopcion/estanDeAcuerdoAdopcion", estanDeAcuerdoAdopcion);
 router.use("/adopcion/comoPaseaAnimal", comoPaseaAnimal);
 router.use("/adopcion/periodoVacaciones", periodoVacaciones);
 router.use("/adopcion/cambioDomicilio", cambioDomicilio);
-router.use("/adopcion/herlenciaAnima", herenciaAnimal);
+router.use("/adopcion/herenciaAnimal", herenciaAnimal);
 router.use("/adopcion/seguridadVivienda", seguridadVivienda);
 router.use("/adopcion/propiedadVivienda", propiedadVivienda);
 router.use("/adopcion/recursosUrgencia", recursosUrgencia);
